@@ -28,12 +28,12 @@
       # Thinkpad X1 yoga
       redwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/luna];
+        modules = [./hosts/luna/configuration.nix];
       };
       # VM 
       sequoia = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/mercury];
+        modules = [./hosts/mercury/configuration.nix];
       };
     };
 
