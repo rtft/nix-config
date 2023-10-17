@@ -25,13 +25,15 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
+      # Thinkpad X1 yoga
       redwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/thinkpad_x1_yoga/configuration.nix];
+        modules = [./hosts/luna];
       };
+      # VM 
       sequoia = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/vm/configuration.nix];
+        modules = [./hosts/mercury];
       };
     };
 
@@ -44,7 +46,7 @@
         # > Our main home-manager configuration file <
         modules = [./home-manager/home.nix];
       };
-      "snow@luna" = home-manager.lib.homeManagerConfiguration {
+      "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home-manager/home.nix];
