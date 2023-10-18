@@ -12,12 +12,17 @@
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+
+    bling = { url = "github:BlingCorp/bling"; flake = false; };
+    rubato = { url = "github:andOrlando/rubato"; flake = false; };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nixpkgs-f2k,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -34,6 +39,7 @@
       sequoia = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [./hosts/mercury/configuration.nix];
+        nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];
       };
     };
 
