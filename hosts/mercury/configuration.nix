@@ -49,8 +49,9 @@
   services.xserver.enable = true;
 
   # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.budgie.enable = true;
+  services.xserver.windowManager.awesome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
