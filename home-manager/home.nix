@@ -38,7 +38,6 @@
     };
   };
 
-  # TODO: Set your username
   home = {
     username = "rain";
     homeDirectory = "/home/rain";
@@ -48,6 +47,8 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
+
+  # TODO: Should split some of this into other shared directories 
   home.packages = with pkgs; [
     ripgrep
     bat 
