@@ -38,9 +38,10 @@
       # VM 
       sequoia = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/mercury 
-	{nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
-	];
+        modules = [
+        ./hosts/mercury 
+	      {nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
+	      ];
       };
     };
 
