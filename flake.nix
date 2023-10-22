@@ -33,12 +33,12 @@
       # Thinkpad X1 yoga
       redwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/luna/configuration.nix];
+        modules = [./hosts/luna];
       };
       # VM 
       sequoia = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/mercury/configuration.nix 
+        modules = [./hosts/mercury 
 	{nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
 	];
       };
@@ -51,12 +51,12 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
-        modules = [./home-manager/home.nix];
+        modules = [./home/home.nix];
       };
       "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/home.nix];
+        modules = [./home/home.nix];
       };
     };
   };
