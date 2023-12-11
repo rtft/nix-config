@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, ... }:
-{
-  home.file = {}; 
-}
+#{ inputs, config, pkgs, lib, ... }:
+#{
+  #home.file = {}; 
+#}

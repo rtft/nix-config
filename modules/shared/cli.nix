@@ -1,8 +1,8 @@
 # This is where all systems share the same CLI programs 
 
-{ pkgs }:
+#{ pkgs }:
 
-with pkgs; [
+#with pkgs; [
 
 
-]
+#]
