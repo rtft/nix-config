@@ -11,11 +11,18 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+    };
+    grub = {
+      efiSupport = true;
+      device = "nodev"; 
+    };
+  };
 
-  networking.hostName = "sequoia"; # Define your hostname.
+  networking.hostName = "redwood"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -24,8 +31,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -48,9 +53,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Budgie Desktop environment.
+  # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.budgie.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   services.xserver.windowManager.awesome.enable = true;
 
   # Configure keymap in X11
@@ -59,7 +64,6 @@
     xkbVariant = "";
   };
 
-  virtualisation.vmware.guest.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -84,12 +88,14 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rain= {
+  users.users.rain = {
     isNormalUser = true;
-    description = "--";
+    description = "rain";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
+      git
+      neovim
     #  thunderbird
     ];
   };
@@ -102,13 +108,6 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-     wget 
-     neovim
-     curl
-     git
-
-
-
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -136,6 +135,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }

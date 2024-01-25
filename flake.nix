@@ -12,10 +12,10 @@
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
-    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    # nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
 
-    bling = { url = "github:BlingCorp/bling"; flake = false; };
-    rubato = { url = "github:andOrlando/rubato"; flake = false; };
+    # bling = { url = "github:BlingCorp/bling"; flake = false; };
+    # rubato = { url = "github:andOrlando/rubato"; flake = false; };
   };
 
   outputs = {
@@ -33,14 +33,14 @@
       # Thinkpad X1 yoga
       redwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/luna];
+        modules = [./hosts/redwood];
       };
       # VM 
       sequoia = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-        ./hosts/mercury 
-	      {nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
+        ./hosts/sequoia
+	      # {nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
 	      ];
       };
     };
