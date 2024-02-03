@@ -42,6 +42,10 @@
 	      # {nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
 	      ];
       };
+      cottonwood = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/cottonwood];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -54,6 +58,11 @@
         modules = [./home/home.nix];
       };
       "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/home.nix];
+      };
+      "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/home.nix];
