@@ -10,6 +10,10 @@
       ./hardware-configuration.nix
     ];
 
+  virtualisation.vmware.guest.enable = true; 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -24,8 +28,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -49,9 +51,8 @@
   services.xserver.enable = true;
 
   # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.budgie.enable = true;
-  services.xserver.windowManager.awesome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -59,7 +60,6 @@
     xkbVariant = "";
   };
 
-  virtualisation.vmware.guest.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -84,15 +84,19 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rain= {
+  users.users.rain = {
     isNormalUser = true;
-    description = "--";
+    description = "rain";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
     #  thunderbird
     ];
   };
+
+  # Enable automatic login for the user.
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "rain";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -102,13 +106,10 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-     wget 
-     neovim
-     curl
+     wget
+     neovim 
+     curl 
      git
-
-
-
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
