@@ -54,17 +54,20 @@
       "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./core];
+        modules = [
+          ./modules/core 
+          ./modules/applications
+        ];
       };
       "rain@redwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
-        modules = [./core];
+        modules = [./modules/core];
       };
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
-        modules = [./core];
+        modules = [./modules/core];
       };
     };
   };
