@@ -4,5 +4,5 @@
     alacritty 
     kitty 
     floorp
-  ]
+  ];
 }

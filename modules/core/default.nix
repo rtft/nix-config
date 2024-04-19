@@ -22,5 +22,5 @@
     starship
     xonsh
     zsh
-  ]
+  ];
 }
