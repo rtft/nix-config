@@ -56,7 +56,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./modules/core 
-          ./modules/applications
+          # ./modules/applications
         ];
       };
       "rain@redwood" = home-manager.lib.homeManagerConfiguration {

@@ -22,5 +22,9 @@
     starship
     xonsh
     zsh
+
+    # TEMP 
+    alacritty
+    
   ];
 }
