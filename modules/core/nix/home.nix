@@ -54,13 +54,7 @@
 
   # TODO: Should split some of this into other shared directories 
   home.packages = with pkgs; [
-    ripgrep
-    bat 
-    fd
-    kitty
-    alacritty 
-    helix
-    zellij
+
   ];
 
   # Enable home-manager and git

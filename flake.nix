@@ -29,11 +29,6 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      # Thinkpad X1 yoga
-      redwood = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/redwood];
-      };
       # VM 
       sequoia = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -41,6 +36,11 @@
         ./hosts/sequoia
 	      # {nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
 	      ];
+      };
+      # Thinkpad X1 yoga
+      redwood = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/redwood];
       };
       cottonwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -51,21 +51,20 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
+      "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./core];
+      };
       "rain@redwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
-        modules = [./home/home.nix];
-      };
-      "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/home.nix];
+        modules = [./core];
       };
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/home.nix];
+        modules = [./core];
       };
     };
   };
