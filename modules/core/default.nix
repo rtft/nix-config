@@ -1,10 +1,9 @@
 {
-  config, lib, pkgs, home-manager, ...
+  config, lib, pkgs, ...
 }:
 {
   imports = [
-    ./terminal
-    ./nix/home.nix
+
   ];
   environment.systemPackages = with pkgs; [
     picat
@@ -23,8 +22,5 @@
     xonsh
     zsh
 
-    # TEMP 
-    alacritty
-    
   ];
 }

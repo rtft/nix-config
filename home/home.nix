@@ -16,6 +16,7 @@
     # ./nvim.nix
     # ../modules/desktop/awesome.nix
 #    ../modules/shared/cli.nix
+    #../modules/core
 
     
   ];

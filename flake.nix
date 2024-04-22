@@ -44,7 +44,10 @@
       };
       cottonwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/cottonwood];
+        modules = [
+        ./hosts/cottonwood 
+        ./modules/core
+        ];
       };
     };
 
@@ -67,7 +70,7 @@
       };
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
-        modules = [./modules/core];
+        modules = [./home/home.nix];
       };
     };
   };
