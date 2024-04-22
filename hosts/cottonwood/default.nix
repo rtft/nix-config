@@ -21,6 +21,7 @@
     grub = {
       efiSupport = true;
       device = "nodev"; 
+      useOSProber = true;
     };
   };
   networking.hostName = "cottonwood"; # Define your hostname.

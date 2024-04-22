@@ -47,6 +47,7 @@
         modules = [
         ./hosts/cottonwood 
         ./modules/core
+        ./modules/applications
         ];
       };
     };
@@ -58,15 +59,14 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          ./modules/core 
-          # ./modules/applications
+          ./home/home.nix
         ];
       };
       "rain@redwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
-        modules = [./modules/core];
+        modules = [./home/home.nix];
       };
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
