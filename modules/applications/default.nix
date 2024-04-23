@@ -11,10 +11,10 @@
     mpv
     anki
     nsxiv
+    audacity
     
     
     
-
     spotify 
     discord 
     

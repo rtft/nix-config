@@ -29,6 +29,9 @@
     zoxide 
     emacs
     xplr
+
+    #TODO: This needs to be set up as a service probably
+    iodine
     
 
     # TODO: Find the better of the two of these programs
@@ -44,4 +47,7 @@
     zsh
 
   ];
+
+  programs.xonsh.enable = true;
+  users.defaultUserShell = pkgs.xonsh;
 }
