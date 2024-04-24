@@ -55,8 +55,13 @@
   # home.packages = with pkgs; [ steam ];
 
   # TODO: Should split some of this into other shared directories 
-  home.packages = with pkgs; [
+  #home.packages = with pkgs; [
+  #];
 
+  fonts.fontconfig.enable = true;
+
+  home.packages = [
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode"]; })
   ];
 
   # Enable home-manager and git

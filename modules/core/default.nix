@@ -10,6 +10,7 @@
     # default programming environments without shell.nix
     picat
     python3
+    #python311Packages.cadquery
     ihaskell
     ghc
 
