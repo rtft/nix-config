@@ -30,6 +30,7 @@
     zoxide 
     emacs
     xplr
+    bottom
 
     #TODO: This needs to be set up as a service probably
     iodine

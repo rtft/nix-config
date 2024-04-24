@@ -15,6 +15,7 @@
       format = lib.concatStrings [
         "$os"
         "$username"
+        "$hostname"
         "$shell"
       ];
       right_format = lib.concatStrings [
@@ -41,12 +42,17 @@
 
       cmd_duration = {
         disabled = false;
-        min_time = 1;
-        #min_time_to_notify = 1000;
+        min_time = 0;
+        min_time_to_notify = 6000;
+        show_notifications = true;
       };
 
       username = {
         show_always = true;
+      };
+
+      hostname = {
+        ssh_only = false;
       };
 
       
