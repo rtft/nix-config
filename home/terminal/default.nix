@@ -3,6 +3,9 @@
   #programs.xonsh = {
   #  enable = true; 
   #};
+  imports = [
+    ./starship.nix
+  ];
 
   programs.zsh = {
     enable = true;
@@ -15,13 +18,4 @@
     enable = true;
   };
 
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    enableNushellIntegration = true;
-
-    #settings = {
-      
-    #};
-  };
 }
