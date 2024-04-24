@@ -60,8 +60,8 @@
 
   fonts.fontconfig.enable = true;
 
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode"]; })
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode"]; })
   ];
 
   # Enable home-manager and git
