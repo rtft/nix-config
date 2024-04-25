@@ -16,8 +16,8 @@
     nsxiv
     audacity
     
-    
-    
+    rofi-wayland
+    vscode-fhs    
     spotify 
     discord 
     

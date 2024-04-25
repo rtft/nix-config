@@ -48,6 +48,7 @@
         ./hosts/cottonwood 
         ./modules/core
         ./modules/applications
+        ./modules/desktop/hyprland
         ];
       };
     };
