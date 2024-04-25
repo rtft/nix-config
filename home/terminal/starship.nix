@@ -24,8 +24,22 @@
         "$git_status"
         "[](fg:color_aqua bg:color_purple)"
         "$shell"
-        "[](fg:color_purple)"
-        "$linebreak"
+        "[](fg:color_purple) "
+        "$aws"
+        "$conda"
+        "$dart"
+        "$elixir"
+        "$elm"
+        "$go"
+        "$java"
+        "$nix_shell"
+        "$nodejs"
+        "$php"
+        "$python"
+        "$ruby"
+        "$rust"
+        "$line_break"
+        "$character"
       ];
       right_format = lib.concatStrings [
         "$status"
@@ -54,7 +68,7 @@
       shell = {
         disabled = false; 
         style = "bg:color_purple fg:color_fg0";
-        format = "[$indicator]($style)";
+        format = "[  $indicator]($style)";
       };
 
       time = {
@@ -155,6 +169,58 @@
       #   symbol = "";
       #   #format = "$symbol [${ram}( | ${swap})]($style)";
       # };
+
+      aws = {
+        symbol = " ";
+      };
+
+      conda = {
+        symbol = " ";
+      };
+
+      dart = {
+        symbol = " ";
+      };
+
+      elixir = {
+        symbol = " ";
+      };
+
+      elm = {
+        symbol = " ";
+      };
+
+      golang = {
+        symbol = " ";
+      };
+
+      java = {
+        symbol = " ";
+      };
+
+      nix_shell = {
+        symbol = " ";
+      };
+
+      nodejs = {
+        symbol = "󰎙";
+      };
+
+      php = {
+        symbol = " ";
+      };
+
+      python = {
+        symbol = " ";
+      };
+
+      ruby = {
+        symbol = " ";
+      };
+
+      rust = {
+        symbol = " ";
+      };
 
       
     };
