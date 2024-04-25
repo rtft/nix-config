@@ -13,5 +13,6 @@
 
     
     
-  ]
+  ];
+  programs.steam.enable = true;
 }

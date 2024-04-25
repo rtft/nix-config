@@ -1,5 +1,8 @@
 {config, lib, pkgs, ...}:
 {
+  imports = [
+    ./heavy.nix
+  ];
   environment.systemPackages = with pkgs; [
     alacritty 
     kitty 
@@ -17,11 +20,6 @@
     
     spotify 
     discord 
-    
-    # TODO: probably good to have a heavy programs module
-    blender
-    steam
-    reaper
     
   ];
 }

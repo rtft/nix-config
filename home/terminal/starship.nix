@@ -14,8 +14,10 @@
       add_newline = true;
       format = lib.concatStrings [
         "$os"
+        "[](bg:#DA627D fg:#9A348E)"
         "$username"
         "$hostname"
+        "[](fg:#9A348E)"
         "$shell"
       ];
       right_format = lib.concatStrings [
@@ -49,11 +51,23 @@
 
       username = {
         show_always = true;
+        style_user = "bg:#9A348E";
+        style_root = "bg:#9A348E";
+        format = "[$user@]($style)";
       };
 
       hostname = {
         ssh_only = false;
+        style = "bg:#9A348E";
+        format = "[$ssh_symbol$hostname]($style)";
       };
+
+      # memory_usage = {
+      #   disabled = false;
+      #   threshold = -1;
+      #   symbol = "";
+      #   #format = "$symbol [${ram}( | ${swap})]($style)";
+      # };
 
       
     };
