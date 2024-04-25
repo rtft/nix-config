@@ -22,8 +22,10 @@
         "[](fg:color_yellow bg:color_aqua)"
         "$git_branch"
         "$git_status"
-        "[](fg:color_aqua bg:color_blue)"
+        "[](fg:color_aqua bg:color_purple)"
         "$shell"
+        "[](fg:color_purple)"
+        "$linebreak"
       ];
       right_format = lib.concatStrings [
         "$status"
@@ -51,6 +53,8 @@
      
       shell = {
         disabled = false; 
+        style = "bg:color_purple fg:color_fg0";
+        format = "[$indicator]($style)";
       };
 
       time = {
@@ -63,6 +67,25 @@
 
         symbols = {
           NixOS = "";
+          Windows = "󰍲";
+          Ubuntu = "󰕈";
+          SUSE = "";
+          Raspbian = "󰐿";
+          Mint = "󰣭";
+          Macos = "󰀵";
+          Manjaro = "";
+          Linux = "󰌽";
+          Gentoo = "󰣨";
+          Fedora = "󰣛";
+          Alpine = "";
+          Amazon = "";
+          Android = "";
+          Arch = "󰣇";
+          Artix = "󰣇";
+          CentOS = "";
+          Debian = "󰣚";
+          Redhat = "󱄛";
+          RedHatEnterprise = "󱄛";
         };
         
       };
@@ -114,6 +137,16 @@
       git_status = {
         style = "bg:color_aqua";
         format = "[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)";
+      };
+
+      character = {
+        disabled = false;
+        success_symbol = "[](bold fg:color_green)";
+        error_symbol = "[](bold fg:color_red)";
+        vimcmd_symbol = "[](bold fg:color_green)";
+        vimcmd_replace_one_symbol = "[](bold fg:color_purple)";
+        vimcmd_replace_symbol = "[](bold fg:color_purple)";
+        vimcmd_visual_symbol = "[](bold fg:color_yellow)";
       };
 
       # memory_usage = {
