@@ -1,5 +1,5 @@
 {
-  config, lib, pkgs, inputs, ...
+  config, lib, pkgs, pkgs-unstable, ...
 }:
 {
   imports = [
@@ -50,7 +50,7 @@
 
   ])
   ++
-  (with inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}"; [
+  (with pkgs-unstable; [
     emacs
   ]);
 

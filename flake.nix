@@ -29,13 +29,15 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    #TODO: Change system later to be more dynamic
+    pkgs-unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
   in {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # VM 
       sequoia = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs pkgs-unstable;};
         modules = [
         ./hosts/sequoia
 	      # {nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
@@ -43,11 +45,12 @@
       };
       # Thinkpad X1 yoga
       redwood = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs pkgs-unstable;};
         modules = [./hosts/redwood];
       };
+      # GPD Win Mini
       cottonwood = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs pkgs-unstable;};
         modules = [
         ./hosts/cottonwood 
         ./modules/core
