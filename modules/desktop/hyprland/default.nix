@@ -1,4 +1,4 @@
-{config, lib, pkgs, ...} : {
+{config, lib, pkgs, inputs, ...} : {
     imports = [
 
     ];
@@ -9,9 +9,9 @@
         }))
     ];
 
+    programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     programs.hyprland = {
         enable = true;
-        nvidiaPatches = true;
         xwayland.enable = true;
     };
 

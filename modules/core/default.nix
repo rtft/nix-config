@@ -1,15 +1,16 @@
 {
-  config, lib, pkgs, ...
+  config, lib, pkgs, inputs, ...
 }:
 {
   imports = [
 
   ];
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     # TODO: probably best to seperate these packages into their own modules based on type
     # default programming environments without shell.nix
     picat
     python3
+    python311Packages.pandas
     #python311Packages.cadquery
     ihaskell
     ghc
@@ -28,12 +29,11 @@
     yt-dlp
     jq
     zoxide 
-    emacs
     xplr
     bottom
 
     #TODO: This needs to be set up as a service probably
-    iodine
+    # iodine
     
 
     # TODO: Find the better of the two of these programs
@@ -48,7 +48,11 @@
     xonsh
     zsh
 
-  ];
+  ])
+  ++
+  (with inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}"; [
+    emacs
+  ]);
 
   programs.xonsh.enable = true;
   users.defaultUserShell = pkgs.xonsh;
