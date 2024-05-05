@@ -20,6 +20,7 @@
     vscode-fhs    
     spotify 
     discord 
+    flameshot
     
   ];
 }
