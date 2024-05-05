@@ -40,6 +40,9 @@
         specialArgs = {inherit inputs outputs pkgs-unstable;};
         modules = [
         ./hosts/sequoia
+        ./modules/core
+        ./modules/applications
+        ./modules/desktop/hyprland
 	      # {nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
 	      ];
       };
