@@ -49,7 +49,12 @@
       # Thinkpad X1 yoga
       redwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs pkgs-unstable;};
-        modules = [./hosts/redwood];
+        modules = [
+          ./hosts/redwood
+          ./modules/core
+          ./modules/applications
+          ./modules/desktop/hyprland
+        ];
       };
       # GPD Win Mini
       cottonwood = nixpkgs.lib.nixosSystem {
