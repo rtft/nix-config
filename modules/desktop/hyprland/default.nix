@@ -7,6 +7,9 @@
         (pkgs.waybar.overrideAttrs (oldAttrs: {
             mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
         }))
+        dunst
+        libnotify
+        swww
     ];
 
     programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;

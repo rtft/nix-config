@@ -39,8 +39,7 @@
         ./hosts/sequoia
         ./modules/core
         ./modules/applications
-        # ./modules/desktop/hyprland
-	      # {nixpkgs.overlays = [ nixpkgs-f2k.overlays.window-managers ];}
+        ./modules/desktop/hyprland
 	      ];
       };
       # Thinkpad X1 yoga
@@ -69,14 +68,11 @@
       "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home/home.nix
-        ];
+        modules = [./home/home.nix];
       };
       "rain@redwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
-        # > Our main home-manager configuration file <
         modules = [./home/home.nix];
       };
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
