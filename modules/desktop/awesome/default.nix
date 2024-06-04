@@ -15,7 +15,7 @@
   
   environment.systemPackages = with pkgs; [
     awesome
-  ]
+  ];
   services.xserver.windowManager.awesome = {
     enable = true;
     # extraPackages = with pkgs; [
