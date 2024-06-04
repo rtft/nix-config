@@ -9,9 +9,9 @@
 
 # }
 
-{inputs, config, lib, pkgs}:
+{inputs, config, lib, pkgs, ...}:
 {
-  import = [];
+  imports = [];
   
   environment.systemPackages = with pkgs; [
     awesome
