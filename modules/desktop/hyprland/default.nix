@@ -4,9 +4,6 @@
     ];
     environment.systemPackages = with pkgs; [
         waybar
-        (pkgs.waybar.overrideAttrs (oldAttrs: {
-            mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-        }))
         dunst
         libnotify
         swww
@@ -16,7 +13,6 @@
     programs.hyprland = {
         enable = true;
         xwayland.enable = true;
-        nvidia.patches = true;
     };
 
     environment.sessionVariables = {
