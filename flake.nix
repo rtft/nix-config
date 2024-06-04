@@ -40,6 +40,7 @@
         ./modules/core
         ./modules/applications
         ./modules/desktop/hyprland
+        ./modules/desktop/awesome
 	      ];
       };
       # Thinkpad X1 yoga
@@ -58,6 +59,7 @@
         ./hosts/cottonwood 
         ./modules/core
         ./modules/applications
+        ./modules/desktop/hyprland
         ];
       };
     };
