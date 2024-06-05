@@ -49,6 +49,8 @@
           ./hosts/redwood
           ./modules/core
           ./modules/applications
+	  ./modules/desktop/hyprland
+	  ./modules/desktop/awesome
         ];
       };
       # GPD Win Mini
