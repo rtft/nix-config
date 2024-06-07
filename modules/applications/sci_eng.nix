@@ -13,5 +13,10 @@
     aflplusplus
     frink
     rink
+    bioawk
+
+    ## Security #TODO: Move some RE stuff down here
+    sn0int 
+    py-spy
   ];
 }

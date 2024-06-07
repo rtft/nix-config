@@ -36,7 +36,7 @@
     bottom
     pandoc
     ffmpeg_7-full
-    awk
+    gawk
     lnav
     dust 
     sd
@@ -54,6 +54,8 @@
     hexyl
     pijul
     docker 
+    gdb
+    thefuck
 
     #TODO: This needs to be set up as a service probably
     # iodine
@@ -65,8 +67,20 @@
     lsd
     eza
     
-    
-    
+    ## Debug tools 
+    procps
+    util-linux
+    sysstat 
+    iproute2
+    numactl 
+    tcpdump
+    trace-cmd
+    ethtool
+    tiptop
+    cpuid
+    msr-tools
+    nmap
+
     # Shell
     nushell
     starship

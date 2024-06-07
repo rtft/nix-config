@@ -26,6 +26,8 @@
 
     neovide
     rustdesk
+    nyxt
+    
     
   ];
 }
