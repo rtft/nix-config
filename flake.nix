@@ -43,7 +43,7 @@
         ./hosts/sequoia
         ./modules/core
         ./modules/applications
-        ./modules/desktop/hyprland
+        # ./modules/desktop/hyprland
         ./modules/desktop/awesome
 	      ];
       };
@@ -54,7 +54,7 @@
           ./hosts/redwood
           ./modules/core
           ./modules/applications
-	        ./modules/desktop/hyprland
+	        # ./modules/desktop/hyprland
 	        ./modules/desktop/awesome
         ];
       };
@@ -65,7 +65,7 @@
         ./hosts/cottonwood 
         ./modules/core
         ./modules/applications
-        ./modules/desktop/hyprland
+        # ./modules/desktop/hyprland
         ];
       };
     };
