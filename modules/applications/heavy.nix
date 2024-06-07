@@ -8,7 +8,6 @@
     godot_4
     aseprite
     krita
-    fspy
 
 
     # Gaming 
