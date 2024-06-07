@@ -16,6 +16,9 @@
     # ./nvim.nix
     # ../modules/desktop/awesome.nix
 #    ../modules/shared/cli.nix
+    #../modules/core
+    ./terminal
+    ./hyprland
 
     
   ];
@@ -53,14 +56,13 @@
   # home.packages = with pkgs; [ steam ];
 
   # TODO: Should split some of this into other shared directories 
+  #home.packages = with pkgs; [
+  #];
+
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
-    ripgrep
-    bat 
-    fd
-    kitty
-    alacritty 
-    helix
-    zellij
+    (nerdfonts.override { fonts = [ "FiraCode"]; })
   ];
 
   # Enable home-manager and git
@@ -77,5 +79,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }
