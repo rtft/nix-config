@@ -11,10 +11,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/Hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/Hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     
 
     # TODO: Add any other flake you might need
@@ -54,8 +54,8 @@
           ./hosts/redwood
           ./modules/core
           ./modules/applications
-	  ./modules/desktop/hyprland
-	  ./modules/desktop/awesome
+	        ./modules/desktop/hyprland
+	        ./modules/desktop/awesome
         ];
       };
       # GPD Win Mini
