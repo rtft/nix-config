@@ -2,6 +2,8 @@
 {
   imports = [
     ./heavy.nix
+    ./sci_eng.nix
+    ./programming.nix
   ];
   environment.systemPackages = with pkgs; [
     alacritty 
@@ -21,6 +23,9 @@
     spotify 
     discord 
     flameshot
+
+    neovide
+    rustdesk
     
   ];
 }

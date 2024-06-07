@@ -11,6 +11,9 @@
     picat
     python3
     python311Packages.pandas
+    python311Packages.yfinance
+    python311Packages.numpy
+    python311Packages.simpy
     #python311Packages.cadquery
     ihaskell
     ghc
@@ -31,6 +34,26 @@
     zoxide 
     xplr
     bottom
+    pandoc
+    ffmpeg_7-full
+    awk
+    lnav
+    dust 
+    sd
+    procs
+    tldr
+    rsync
+    openssh
+    criu
+    curl 
+    wget
+    broot
+    tokei
+    plan9port
+    rm-improved
+    hexyl
+    pijul
+    docker 
 
     #TODO: This needs to be set up as a service probably
     # iodine

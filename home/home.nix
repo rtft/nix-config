@@ -18,6 +18,7 @@
 #    ../modules/shared/cli.nix
     #../modules/core
     ./terminal
+    ./hyprland
 
     
   ];
