@@ -9,7 +9,7 @@
         swww
     ];
 
-    programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    # programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     programs.hyprland = {
         enable = true;
         xwayland.enable = true;

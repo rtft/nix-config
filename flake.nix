@@ -10,7 +10,7 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
     # hyprland-plugins = {
     #   url = "github:hyprwm/Hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
@@ -65,7 +65,7 @@
         ./hosts/cottonwood 
         ./modules/core
         ./modules/applications
-        # ./modules/desktop/hyprland
+        ./modules/desktop/hyprland
         ];
       };
     };

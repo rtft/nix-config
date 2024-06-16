@@ -11,8 +11,6 @@
     tlaps
     tlaplusToolbox
     aflplusplus
-    frink
-    rink
     bioawk
 
     ## Security #TODO: Move some RE stuff down here
