@@ -7,9 +7,10 @@
         dunst
         libnotify
         swww
+        rofi-wayland
     ];
 
-    # programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     programs.hyprland = {
         enable = true;
         xwayland.enable = true;
@@ -22,7 +23,7 @@
      
     hardware = {
         opengl.enable = true;
-        nvidia.modesetting.enable = true;
+        #nvidia.modesetting.enable = true;
     };
 
     xdg.portal.enable = true;
