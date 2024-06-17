@@ -64,7 +64,10 @@
           color_yellow = "#d79921";
         };
       };
-     
+      fill = {
+        disabled = false;
+        symbol = ".";
+      };
       shell = {
         disabled = false; 
         style = "bg:color_purple fg:color_fg0";
