@@ -8,6 +8,7 @@
         libnotify
         swww
         rofi-wayland
+        ags
     ];
 
     programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;

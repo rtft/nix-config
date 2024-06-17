@@ -20,5 +20,6 @@
     uiua
     supercollider
     coconut
+    nodejs_22
    ];
 }

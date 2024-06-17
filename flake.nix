@@ -11,10 +11,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/Hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
+    hyprland-plugins = {
+      url = "github:hyprwm/Hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     
 
     # TODO: Add any other flake you might need
@@ -85,6 +85,7 @@
       };
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+        extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/home.nix];
       };
     };
