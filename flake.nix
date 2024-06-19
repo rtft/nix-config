@@ -15,6 +15,8 @@
       url = "github:hyprwm/Hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    stylix.url = "github:danth/stylix";
     
 
     # TODO: Add any other flake you might need
@@ -54,7 +56,7 @@
           ./hosts/redwood
           ./modules/core
           ./modules/applications
-	        # ./modules/desktop/hyprland
+	        ./modules/desktop/hyprland
 	        ./modules/desktop/awesome
         ];
       };
@@ -66,6 +68,7 @@
         ./modules/core
         ./modules/applications
         ./modules/desktop/hyprland
+        inputs.stylix.nixosModules.stylix
         ];
       };
     };
