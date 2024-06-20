@@ -31,6 +31,7 @@
     self, # TODO: probably don't need this
     nixpkgs,
     home-manager,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs; # TODO: probably don't need this
@@ -68,6 +69,7 @@
         ./modules/core
         ./modules/applications
         ./modules/desktop/hyprland
+        ./modules/desktop/awesome
         inputs.stylix.nixosModules.stylix
         ];
       };
@@ -89,7 +91,7 @@
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/home.nix];
+        modules = [stylix.homeManagerModules.stylix ./home/home.nix];
       };
     };
   };
