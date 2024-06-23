@@ -59,6 +59,7 @@
           ./modules/applications
 	        ./modules/desktop/hyprland
 	        ./modules/desktop/awesome
+        inputs.stylix.nixosModules.stylix
         ];
       };
       # GPD Win Mini
@@ -86,7 +87,7 @@
       "rain@redwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/home.nix];
+        modules = [stylix.homeManagerModules.stylix ./home/home.nix];
       };
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
