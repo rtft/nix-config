@@ -19,6 +19,26 @@
       general = {
         layout = "scroller";
       };
-    };
+      decoration = {
+
+      };
+      bindm = [
+        {
+          key = "Mod4";
+          value = {
+            "Return" = "kitty";
+            "d" = "rofi -show drun";
+            "w" = "rofi -show window";
+            "q" = "killall -9 waybar";
+            "r" = "rofi -show run";
+            "c" = "rofi -show calc";
+            "s" = "rofi -show ssh";
+            "e" = "rofi -show emoji";
+            "p" = "rofi -show power";
+          };
+        }
+      ];
+
+    }; 
   };
 }
