@@ -83,7 +83,7 @@
       "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/home.nix];
+        modules = [stylix.homeManagerModules.stylix ./home/home.nix];
       };
       "rain@redwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
