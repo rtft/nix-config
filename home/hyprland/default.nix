@@ -9,16 +9,16 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    # plugins = [
-    #   inputs.hyprland-plugins.packages."${pkgs.system}".hyprscroller
-    # ];
+     plugins = [
+       #inputs.hyprland-plugins.packages."${pkgs.system}".
+     ];
 
 
     settings = {
       exec-once = ''${startupScript}/bin/start'';
-      # general = {
-      #   layout = "scroller";
-      # };
+       general = {
+         #layout = "scroller";
+       };
       decoration = {
 
       };
