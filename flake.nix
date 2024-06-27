@@ -46,9 +46,8 @@
         ./hosts/sequoia
         ./modules/core
         ./modules/applications
-        ./modules/desktop/hyprland
+        # ./modules/desktop/hyprland
         ./modules/desktop/awesome
-        inputs.stylix.nixosModules.stylix
 	      ];
       };
       # Thinkpad X1 yoga
@@ -83,7 +82,7 @@
       "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [stylix.homeManagerModules.stylix ./home/home.nix];
+        modules = [./home/home.nix];
       };
       "rain@redwood" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
