@@ -89,6 +89,7 @@
     starship
     xonsh
     zsh
+    yazi
 
   ];
   # ++
@@ -98,6 +99,8 @@
 
   programs.xonsh.enable = true;
   users.defaultUserShell = pkgs.xonsh;
+
+  #TODO: Remove stylix from this flake
 
   stylix.enable = true;
   stylix.image = ../../assets/test_wallpaper.jpg;

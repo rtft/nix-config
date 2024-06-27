@@ -17,12 +17,14 @@
     anki
     nsxiv
     audacity
-    
+    hydrus
+
     rofi-wayland
     vscode-fhs    
     spotify 
     discord 
     flameshot
+    ollama
 
     neovide
     rustdesk

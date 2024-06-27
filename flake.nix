@@ -46,8 +46,9 @@
         ./hosts/sequoia
         ./modules/core
         ./modules/applications
-        # ./modules/desktop/hyprland
+        ./modules/desktop/hyprland
         ./modules/desktop/awesome
+        inputs.stylix.nixosModules.stylix
 	      ];
       };
       # Thinkpad X1 yoga

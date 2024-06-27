@@ -12,6 +12,7 @@
     tlaplusToolbox
     aflplusplus
     bioawk
+    chirp
 
     ## Security #TODO: Move some RE stuff down here
     sn0int 
