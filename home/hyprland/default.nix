@@ -16,27 +16,25 @@
 
     settings = {
       exec-once = ''${startupScript}/bin/start'';
-      general = {
-        layout = "scroller";
-      };
+      # general = {
+      #   layout = "scroller";
+      # };
       decoration = {
 
       };
-      bindm = [
-        {
-          key = "Mod4";
-          value = {
-            "Return" = "kitty";
-            "d" = "rofi -show drun";
-            "w" = "rofi -show window";
-            "q" = "killall -9 waybar";
-            "r" = "rofi -show run";
-            "c" = "rofi -show calc";
-            "s" = "rofi -show ssh";
-            "e" = "rofi -show emoji";
-            "p" = "rofi -show power";
-          };
-        }
+
+      "$mod" = "SUPER";
+
+      bind = [
+            "$mod, return, exec, kitty"
+            "$mod, d, exec, rofi -show drun"
+            "$mod, w, exec, rofi -show window"
+            "$mod, q, exec, killall -9 waybar"
+            "$mod, r, exec, rofi -show run"
+            "$mod, c, exec, rofi -show calc"
+            "$mod, s, exec, rofi -show ssh"
+            "$mod, e, exec, rofi -show emoji"
+            "$mod, p, exec, rofi -show power"
       ];
 
     }; 

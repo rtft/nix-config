@@ -21,5 +21,7 @@
     supercollider
     coconut
     nodejs_22
+    agda
+    coq
    ];
 }

@@ -4,7 +4,8 @@
     solvespace
     imhex
     ghidra
-    imagej
+    # imagej
+    fiji
     cutter
     kicad
     alloy6
@@ -13,9 +14,18 @@
     aflplusplus
     bioawk
     chirp
+    pulseview
+    sdrangel
 
     ## Security #TODO: Move some RE stuff down here
     sn0int 
     py-spy
+
+
+    ## RE
+
+
+    ## BIO 
+    python312Packages.biopython
   ];
 }
