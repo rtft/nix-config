@@ -50,6 +50,22 @@
         ./modules/desktop/awesome
 	      ];
       };
+      # Desktop 
+      bristlecone = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/bristlecone
+          ./modules/core
+          ./modules/applications
+	        #./modules/desktop/hyprland
+  	      #./modules/desktop/awesome
+          inputs.stylix.nixosModules.stylix
+          #home-manager.nixosModules.home-manager {
+          #  home-manager.useUserPackages = true;
+          #  home-manager.users.rain = import ./home/home.nix;
+          #}
+        ];
+      };
       # Thinkpad X1 yoga
       redwood = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -90,6 +106,11 @@
         modules = [stylix.homeManagerModules.stylix ./home/home.nix];
       };
       "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [stylix.homeManagerModules.stylix ./home/home.nix];
+      };
+      "rain@bristlecone" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [stylix.homeManagerModules.stylix ./home/home.nix];
