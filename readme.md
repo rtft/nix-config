@@ -10,8 +10,8 @@ This is my nixos config, there is still a lot I need to do
 - [ ] Consider using snowfall lib
 - [ ] Consider changing default.nix files for better file search 
 - [ ] Remove stylix from base flake
-- [X] Consider not using home-manager independently 
-    - [X] Would need to split up stylix 
+- [ ] Consider not using home-manager independently 
+    - [ ] Would need to split up stylix 
     - Thinking it's better not to for better use on non nixos systems
 - [ ] AwesomeWM for systems that work better on X (Nvidia, VMs)
     - [ ] Bling 
@@ -31,3 +31,5 @@ This is my nixos config, there is still a lot I need to do
 - [ ] vim/emacs
     - [ ] Setup Doom 
     - [ ] Setup Nixvim 
+- [ ] Boot
+    - [ ] TUIgreet + greetd

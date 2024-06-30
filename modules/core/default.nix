@@ -3,7 +3,7 @@
 }:
 {
   imports = [
-
+	#./nvim.nix
   ];
   environment.systemPackages = with pkgs; [
     # TODO: probably best to seperate these packages into their own modules based on type
