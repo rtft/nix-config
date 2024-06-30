@@ -61,8 +61,8 @@
           ./hosts/bristlecone
           ./modules/core
           ./modules/applications
-	        #./modules/desktop/hyprland
-  	      #./modules/desktop/awesome
+	        ./modules/desktop/hyprland
+  	      ./modules/desktop/awesome
           inputs.stylix.nixosModules.stylix
           #home-manager.nixosModules.home-manager {
           #  home-manager.useUserPackages = true;
