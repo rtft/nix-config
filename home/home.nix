@@ -19,6 +19,7 @@
     #../modules/core
     ./terminal
     ./hyprland
+    ./editors
 
     
   ];

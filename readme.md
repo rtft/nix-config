@@ -13,12 +13,16 @@ This is my nixos config, there is still a lot I need to do
 - [ ] Consider not using home-manager independently 
     - [ ] Would need to split up stylix 
     - Thinking it's better not to for better use on non nixos systems
+    - Though I think it is possible to use 
 - [ ] AwesomeWM for systems that work better on X (Nvidia, VMs)
     - [ ] Bling 
     - [ ] Rubato
 - [ ] Hyprland configuration 
     - [ ] Scrolling WM 
     - [ ] AGS 
+    - [ ] Drop down terminals 
+        - Calculator
+        - Frink/rink 
 - [ ] Terminal 
     - [ ] Alias setup 
     - [ ] Xonsh with xontribs 
@@ -33,3 +37,13 @@ This is my nixos config, there is still a lot I need to do
     - [ ] Setup Nixvim 
 - [ ] Boot
     - [ ] TUIgreet + greetd
+- [ ] Other 
+    - [ ] Browser extensions 
+    - [ ] kando 
+    - [ ] screen sharing 
+    - [ ] bottles
+- [ ] Services
+    - [ ] Kasm 
+    - [ ] ArchiveBox
+    - [ ] Wallabag
+

@@ -23,6 +23,8 @@
     zellij
     ripgrep
     distrobox
+    podman
+    podman-tui
     fd
     bat
     fzf
@@ -59,6 +61,7 @@
     sqlite
     rink
     frink
+    lazygit
 
     #TODO: This needs to be set up as a service probably
     # iodine
@@ -90,6 +93,7 @@
     xonsh
     zsh
     yazi
+    
 
   ];
   # ++

@@ -21,6 +21,7 @@
 
     rofi-wayland
     vscode-fhs    
+    zed-editor
     spotify 
     discord 
     flameshot
