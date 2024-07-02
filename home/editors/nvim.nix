@@ -5,6 +5,8 @@
   ];
   programs.nixvim = {
     enable = true;
+    defaultEditor = true;
+
     plugins = {
       bufferline.enable = true;
 			
