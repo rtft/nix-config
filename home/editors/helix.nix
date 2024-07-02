@@ -1,6 +1,11 @@
 {pkgs, lib, config, ...}:
 {
-    programs.helix.settings = {
-        theme = "monokai_pro_spectrum";
+    programs.helix = {
+       enable = true;
+
+       settings = {
+       	   # Temporary solution while I fix stylix
+           theme = lib.mkForce "monokai_pro_spectrum";
+       };
     };
 }
