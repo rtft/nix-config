@@ -26,6 +26,7 @@ This is my nixos config, there is still a lot I need to do
 - [ ] Terminal 
     - [ ] Alias setup 
     - [ ] Xonsh with xontribs 
+    - [ ] Kitty with kittens
 - [ ] Starship 
     - [ ] Finish design 
     - [ ] Transitive prompt
