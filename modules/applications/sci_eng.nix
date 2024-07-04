@@ -1,6 +1,11 @@
-{config, lib, pkgs, ...}:
 {
-  environment.systemPackages =  with pkgs; [
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
     solvespace
     imhex
     ghidra
@@ -18,12 +23,10 @@
     sdrangel
 
     ## Security #TODO: Move some RE stuff down here
-    sn0int 
+    sn0int
     py-spy
 
-
     ## RE
-
 
     ## BIO 
     python312Packages.biopython

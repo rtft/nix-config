@@ -1,11 +1,16 @@
-{pkgs, lib, config, ...}:
 {
-    programs.helix = {
-       enable = true;
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  programs.helix = {
+    enable = true;
 
-       settings = {
-       	   # Temporary solution while I fix stylix
-           theme = lib.mkForce "monokai_pro_spectrum";
-       };
+    settings = {
+      # Temporary solution while I fix stylix
+      theme = lib.mkForce "monokai_pro_spectrum";
     };
+  };
 }

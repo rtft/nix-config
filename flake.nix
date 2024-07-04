@@ -18,10 +18,9 @@
 
     stylix.url = "github:danth/stylix";
     nixvim = {
-	url = "github:nix-community/nixvim";
-	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    
 
     # TODO: Add any other flake you might need
 
@@ -31,94 +30,122 @@
     # rubato = { url = "github:andOrlando/rubato"; flake = false; };
   };
 
-  outputs = {
-    self, # TODO: probably don't need this
-    nixpkgs,
-    home-manager,
-    stylix,
-    ...
-  } @ inputs: let
-    inherit (self) outputs; # TODO: probably don't need this
-  in {
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
-    nixosConfigurations = {
-      # VM 
-      sequoia = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-        ./hosts/sequoia
-        ./modules/core
-        ./modules/applications
-        # ./modules/desktop/hyprland
-        ./modules/desktop/awesome
-	      ];
+  outputs =
+    {
+      self, # TODO: probably don't need this
+      nixpkgs,
+      home-manager,
+      stylix,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs; # TODO: probably don't need this
+    in
+    {
+      # NixOS configuration entrypoint
+      # Available through 'nixos-rebuild --flake .#your-hostname'
+      nixosConfigurations = {
+        # VM 
+        sequoia = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./hosts/sequoia
+            ./modules/core
+            ./modules/applications
+            # ./modules/desktop/hyprland
+            ./modules/desktop/awesome
+          ];
+        };
+        # Desktop 
+        bristlecone = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./hosts/bristlecone
+            ./modules/core
+            ./modules/applications
+            ./modules/desktop/hyprland
+            ./modules/desktop/awesome
+            inputs.stylix.nixosModules.stylix
+            #home-manager.nixosModules.home-manager {
+            #  home-manager.useUserPackages = true;
+            #  home-manager.users.rain = import ./home/home.nix;
+            #}
+          ];
+        };
+        # Thinkpad X1 yoga
+        redwood = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./hosts/redwood
+            ./modules/core
+            ./modules/applications
+            ./modules/desktop/hyprland
+            ./modules/desktop/awesome
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
+        # GPD Win Mini
+        cottonwood = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            ./hosts/cottonwood
+            ./modules/core
+            ./modules/applications
+            ./modules/desktop/hyprland
+            ./modules/desktop/awesome
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
       };
-      # Desktop 
-      bristlecone = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/bristlecone
-          ./modules/core
-          ./modules/applications
-	        ./modules/desktop/hyprland
-  	      ./modules/desktop/awesome
-          inputs.stylix.nixosModules.stylix
-          #home-manager.nixosModules.home-manager {
-          #  home-manager.useUserPackages = true;
-          #  home-manager.users.rain = import ./home/home.nix;
-          #}
-        ];
-      };
-      # Thinkpad X1 yoga
-      redwood = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./hosts/redwood
-          ./modules/core
-          ./modules/applications
-	        ./modules/desktop/hyprland
-	        ./modules/desktop/awesome
-        inputs.stylix.nixosModules.stylix
-        ];
-      };
-      # GPD Win Mini
-      cottonwood = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-        ./hosts/cottonwood 
-        ./modules/core
-        ./modules/applications
-        ./modules/desktop/hyprland
-        ./modules/desktop/awesome
-        inputs.stylix.nixosModules.stylix
-        ];
-      };
-    };
 
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home/home.nix];
-      };
-      "rain@redwood" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [stylix.homeManagerModules.stylix ./home/home.nix];
-      };
-      "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [stylix.homeManagerModules.stylix ./home/home.nix];
-      };
-      "rain@bristlecone" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [stylix.homeManagerModules.stylix ./home/home.nix];
+      # Standalone home-manager configuration entrypoint
+      # Available through 'home-manager --flake .#your-username@your-hostname'
+      homeConfigurations = {
+        "rain@sequoia" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [ ./home/home.nix ];
+        };
+        "rain@redwood" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            stylix.homeManagerModules.stylix
+            ./home/home.nix
+          ];
+        };
+        "rain@cottonwood" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            stylix.homeManagerModules.stylix
+            ./home/home.nix
+          ];
+        };
+        "rain@bristlecone" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            stylix.homeManagerModules.stylix
+            ./home/home.nix
+          ];
+        };
       };
     };
-  };
 }

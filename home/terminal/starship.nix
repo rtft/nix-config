@@ -1,4 +1,9 @@
-{pkgs, lib, config, ...}:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   #TODO: Nix colors when I get there 
   programs.starship = {
@@ -9,9 +14,9 @@
     # prompt plan 
     # 2 Line, 1 only meant for git branch data 
     # Rest is for regular information
-    
+
     settings = {
-    
+
       add_newline = true;
       format = lib.concatStrings [
         "$os"
@@ -47,7 +52,6 @@
         "$time"
       ];
 
-
       palette = "gruvbox_dark";
 
       palettes = {
@@ -69,7 +73,7 @@
         symbol = ".";
       };
       shell = {
-        disabled = false; 
+        disabled = false;
         style = "bg:color_purple fg:color_fg0";
         format = "[  $indicator]($style)";
       };
@@ -104,7 +108,6 @@
           Redhat = "󱄛";
           RedHatEnterprise = "󱄛";
         };
-        
       };
 
       status = {
@@ -224,8 +227,6 @@
       rust = {
         symbol = " ";
       };
-
-      
     };
   };
 }

@@ -1,20 +1,23 @@
 {
-  config, lib, pkgs, ...
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 {
   imports = [
-	#./nvim.nix
+    #./nvim.nix
   ];
   environment.systemPackages = with pkgs; [
     # TODO: probably best to seperate these packages into their own modules based on type
     # default programming environments without shell.nix
     picat
     (pkgs.python3.withPackages (python-pkgs: [
-	python-pkgs.pandas
-	python-pkgs.yfinance
-	python-pkgs.numpy
-	python-pkgs.simpy
-	python-pkgs.ortools
+      python-pkgs.pandas
+      python-pkgs.yfinance
+      python-pkgs.numpy
+      python-pkgs.simpy
+      python-pkgs.ortools
     ]))
     #python311Packages.pandas
     #python311Packages.yfinance
@@ -25,7 +28,6 @@
     ihaskell
     ghc
 
-    
     # Terminal programs
     zellij
     ripgrep
@@ -40,21 +42,21 @@
     helix
     yt-dlp
     jq
-    zoxide 
+    zoxide
     xplr
     bottom
     pandoc
     ffmpeg_7-full
     gawk
     lnav
-    dust 
+    dust
     sd
     procs
     tldr
     rsync
     openssh
     criu
-    curl 
+    curl
     wget
     broot
     tokei
@@ -62,7 +64,7 @@
     rm-improved
     hexyl
     pijul
-    docker 
+    docker
     gdb
     thefuck
     sqlite
@@ -74,18 +76,17 @@
     # iodine
 
     emacs
-    
 
     # TODO: Find the better of the two of these programs
     lsd
     eza
-    
+
     ## Debug tools 
     procps
     util-linux
-    sysstat 
+    sysstat
     iproute2
-    numactl 
+    numactl
     tcpdump
     trace-cmd
     ethtool
@@ -100,8 +101,6 @@
     xonsh
     zsh
     yazi
-    
-
   ];
   # ++
   # (with pkgs-unstable; [
@@ -116,5 +115,4 @@
   stylix.enable = true;
   stylix.image = ../../assets/test_wallpaper.jpg;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
-
 }

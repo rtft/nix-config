@@ -1,6 +1,11 @@
-{config, lib, pkgs, ...}:
 {
-   environment.systemPackages = with pkgs; [
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
     hy
     elixir
     julia
@@ -8,13 +13,13 @@
     crystal
     zig
     rustc
-    rustup 
+    rustup
     rustfmt
-    mercury 
+    mercury
     idris2
     gleam
     nim
-    futhark 
+    futhark
     go
     j
     uiua
@@ -24,11 +29,15 @@
     agda
     coq
 
-    #Python Packages 
+
+    # Supporting Tools
+    nixfmt-rfc-style
+
+    # Python Packages 
     python311Packages.opencv4
     python311Packages.fastapi
     python311Packages.pydantic
     python311Packages.beautifulsoup4
     python311Packages.polars
-   ];
+  ];
 }

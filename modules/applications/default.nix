@@ -1,4 +1,9 @@
-{config, lib, pkgs, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./heavy.nix
@@ -6,8 +11,8 @@
     ./programming.nix
   ];
   environment.systemPackages = with pkgs; [
-    alacritty 
-    kitty 
+    alacritty
+    kitty
     floorp
     wezterm
 
@@ -20,17 +25,15 @@
     hydrus
 
     rofi-wayland
-    vscode-fhs    
+    vscode-fhs
     zed-editor
-    spotify 
-    discord 
+    spotify
+    discord
     flameshot
     ollama
 
     neovide
     rustdesk
     nyxt
-    
-    
   ];
 }

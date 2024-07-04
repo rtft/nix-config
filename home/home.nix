@@ -6,7 +6,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -15,13 +16,11 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     # ../modules/desktop/awesome.nix
-#    ../modules/shared/cli.nix
+    #    ../modules/shared/cli.nix
     #../modules/core
     ./terminal
     ./hyprland
     ./editors
-
-    
   ];
 
   nixpkgs = {
@@ -54,7 +53,6 @@
   stylix.enable = true;
   stylix.image = ../assets/test_wallpaper.jpg;
 
-
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
@@ -65,19 +63,16 @@
 
   fonts.fontconfig.enable = true;
 
-  home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode"]; })
-  ];
+  home.packages = with pkgs; [ (nerdfonts.override { fonts = [ "FiraCode" ]; }) ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git = {
-    enable = true; 
+    enable = true;
     userName = "rtft";
     # TODO: Add email later
     userEmail = "";
   };
-
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

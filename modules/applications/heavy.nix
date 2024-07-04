@@ -1,6 +1,11 @@
-{config, lib, pkgs, ...}:
 {
-  environment.systemPackages =  with pkgs; [
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
 
     # Creative programs
     blender
@@ -9,15 +14,13 @@
     aseprite
     krita
 
-
     # Gaming 
     steam
     dolphin-emu
 
     # Virtualization 
-    qemu 
-    virt-manager 
-    
+    qemu
+    virt-manager
   ];
   programs.steam.enable = true;
 }

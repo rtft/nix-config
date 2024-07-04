@@ -1,6 +1,9 @@
-{pkgs, lib, config, ...}:
 {
-    imports = [
-        ./helix.nix
-    ];
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  imports = [ ./helix.nix ];
 }

@@ -1,11 +1,14 @@
-{pkgs, lib, config, ...}:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   #programs.xonsh = {
   #  enable = true; 
   #};
-  imports = [
-    ./starship.nix
-  ];
+  imports = [ ./starship.nix ];
 
   programs.zsh = {
     enable = true;
@@ -17,5 +20,4 @@
   programs.nushell = {
     enable = true;
   };
-
 }
