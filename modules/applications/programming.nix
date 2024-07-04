@@ -23,5 +23,12 @@
     nodejs_22
     agda
     coq
+
+    #Python Packages 
+    python311Packages.opencv4
+    python311Packages.fastapi
+    python311Packages.pydantic
+    python311Packages.beautifulsoup4
+    python311Packages.polars
    ];
 }

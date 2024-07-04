@@ -14,6 +14,7 @@
     python311Packages.yfinance
     python311Packages.numpy
     python311Packages.simpy
+    python311Packages.ortools
     #python311Packages.cadquery
     ihaskell
     ghc
