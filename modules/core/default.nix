@@ -9,12 +9,18 @@
     # TODO: probably best to seperate these packages into their own modules based on type
     # default programming environments without shell.nix
     picat
-    python3
-    python311Packages.pandas
-    python311Packages.yfinance
-    python311Packages.numpy
-    python311Packages.simpy
-    python311Packages.ortools
+    (pkgs.python3.withPackages (python-pkgs: [
+	python-pkgs.pandas
+	python-pkgs.yfinance
+	python-pkgs.numpy
+	python-pkgs.simpy
+	python-pkgs.ortools
+    ]))
+    #python311Packages.pandas
+    #python311Packages.yfinance
+    #python311Packages.numpy
+    #python311Packages.simpy
+    #python311Packages.ortools
     #python311Packages.cadquery
     ihaskell
     ghc
