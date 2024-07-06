@@ -31,6 +31,7 @@
     discord
     flameshot
     ollama
+    wdisplays
 
     neovide
     rustdesk

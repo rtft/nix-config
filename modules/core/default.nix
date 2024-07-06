@@ -71,6 +71,7 @@
     rink
     frink
     lazygit
+    visidata
 
     #TODO: This needs to be set up as a service probably
     # iodine
