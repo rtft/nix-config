@@ -15,6 +15,7 @@
     kitty
     floorp
     wezterm
+    pciutils
 
     libsForQt5.dolphin
     calibre
