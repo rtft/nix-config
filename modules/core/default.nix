@@ -113,7 +113,4 @@
 
   #TODO: Remove stylix from this flake
 
-  stylix.enable = true;
-  stylix.image = ../../assets/test_wallpaper.jpg;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
 }

@@ -16,7 +16,6 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    stylix.url = "github:danth/stylix";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +34,6 @@
       self, # TODO: probably don't need this
       nixpkgs,
       home-manager,
-      stylix,
       ...
     }@inputs:
     let
@@ -69,7 +67,6 @@
             ./modules/applications
             ./modules/desktop/hyprland
             ./modules/desktop/awesome
-            inputs.stylix.nixosModules.stylix
             #home-manager.nixosModules.home-manager {
             #  home-manager.useUserPackages = true;
             #  home-manager.users.rain = import ./home/home.nix;
@@ -87,7 +84,6 @@
             ./modules/applications
             ./modules/desktop/hyprland
             ./modules/desktop/awesome
-            inputs.stylix.nixosModules.stylix
           ];
         };
         # GPD Win Mini
@@ -101,7 +97,6 @@
             ./modules/applications
             ./modules/desktop/hyprland
             ./modules/desktop/awesome
-            inputs.stylix.nixosModules.stylix
           ];
         };
       };
@@ -122,7 +117,6 @@
             inherit inputs outputs;
           };
           modules = [
-            stylix.homeManagerModules.stylix
             ./home/home.nix
           ];
         };
@@ -132,7 +126,6 @@
             inherit inputs outputs;
           };
           modules = [
-            stylix.homeManagerModules.stylix
             ./home/home.nix
           ];
         };
@@ -142,7 +135,6 @@
             inherit inputs outputs;
           };
           modules = [
-            stylix.homeManagerModules.stylix
             ./home/home.nix
           ];
         };
